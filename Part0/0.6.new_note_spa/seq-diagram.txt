@@ -1,0 +1,5 @@
+note left of browser: browser sends post request with form data represented as json string using spa.js
+browser->server: HTTP POST: https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over  server: server responds with status code = 201,
+server -> browser: Status 201: server returns json
+note left of browser: browser renders the server json to display

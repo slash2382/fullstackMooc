@@ -1,0 +1,14 @@
+note left of  browser: browser sends post request to server
+browser->server: HTTP POST: https://studies.cs.helsinki.fi/exampleapp/new_note
+note over  server: server responds with status code = 302 
+server -> browser: Server returns status 302 to browser (rediraction)
+browser->server: HTTP GET: https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser: Status 200: server responds with HTML document
+browser->server: HTTP GET: https://studies.cs.helsinki.fi/exampleapp/main.css
+server -> browser: Status 200, server returns main.css
+browser->server: HTTP GET: https://studies.cs.helsinki.fi/exampleapp/main.js
+server->browser: Status 200, server returns main.js
+note left of browser: browser starts processing main.js and performs get req /exampleapp/data.json
+browser->server: HTTP GET: https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: Status 200 returns json content [content: "annyeong", date: "2020-11-16T11:29:57.264Z"},…]
+note left of browser: finally browser fire event handler and renders the content of notes to display
